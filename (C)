@@ -15,3 +15,39 @@ int c=0;
          if(st_pro[row][i]>1 && flag==1)
          {
                 c=1;
+         }
+         st_pro[row][i]++;
+         row=i;
+         break;
+        }
+        if (c==1)
+        break;
+  }
+
+  for(i=0;i<proc;i++)
+  {
+        if (c==1)
+        break;
+   if(req[row][i]==1)
+        {
+         if(st_req[row][i]>1)
+         {
+          c=1;
+         }
+         st_req[row][i]++;
+         row=i;
+         flag=1;
+         break;
+        }
+        if (c==1)
+        break;
+  }
+
+if (c==1)
+{
+printf("Deadlock Occured\n");
+break;
+}
+}
+if(c==0)
+printf("\nNo Deadlock Detected\n");
